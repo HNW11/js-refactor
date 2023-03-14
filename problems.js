@@ -10,7 +10,9 @@
 function plusFive(num) {
     return num + 5;
 }
-
+function plusTen(num){
+    return num + 10;
+};
 
 /*
     Original:
@@ -28,7 +30,14 @@ function printFives(max) {
         }
     }
 }
-
+function returnSevens(max){
+    let array = [];
+    for (let i = 0; i < max; i++){
+        if (i % 7 === 0){
+            array.push(i);
+        }
+    }return array;
+}
 
 /*
     Original:
@@ -47,6 +56,10 @@ function eitherStringIncluded(sentence, word1, word2) {
     return sentence.includes(word1) || sentence.includes(word2);
 }
 
+function bothStringsIncluded(sentence, word1, word2){
+    return sentence.includes(word1) && sentence.includes(word2);
+
+}
 
 /*
     Original:
@@ -66,6 +79,12 @@ function sumArray(arr) {
     return sum;
 }
 
+function productArray(arr){
+    let product = 1;
+    for(let i = 0; i <arr.length; i++){
+        product *= arr[i];
+    }return product;
+}
 
 /*
     Original:
@@ -80,6 +99,10 @@ function threeOrSeven(num) {
     return num % 3 === 0 || num % 7 === 0;
 }
 
+function fiveAndEleven(num){
+    return num % 5 === 0 && num % 11 === 0;
+
+}
 
 /*
     Original:
@@ -101,6 +124,16 @@ function countVowels(word) {
     return count;
 }
 
+function countConsonants(word){
+    const nv = ['b', 'c', 'd', 'f,', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+    let count = 0;
+    for(let i = 0; i < word.length; i++){
+        if(nv.includes(word[i])){
+            count++;
+        }
+    }return count++;
+
+}
 
 /*
     Original:
@@ -122,7 +155,19 @@ function whisper(str) {
     return str.toLowerCase();
 }
 
-
+function alternatingLetters(str){
+    let newa = str.split("");
+    let final=[];
+        for(i=0; i<newa.length; i++){
+            if(i%2===0){
+               final.push(newa[i].toLowerCase());
+            }
+            else{
+                final.push(newa[i].toUpperCase());
+            }
+        };
+    return final.join("");
+    };
 module.exports = {
     plusTen,
     returnSevens,
